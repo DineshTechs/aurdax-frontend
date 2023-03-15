@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuradX-Staking Dapp</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/tab.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/ax.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="main_section_wrapper">
+        <div class="bg_wrapper">
+
+           
+        <div class="bg1">
+            <!-- <img src="./assets/img/bg.png" alt=""> -->
+        </div>
+    
+        <div class="bg2">
+            <!-- <img src="./assets/img/bg.png" alt=""> -->
+        </div>
+    </div>
+        <div class="action">
+            <div class="overlay"></div>
+            <header>
+                <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+                    <div class="container-fluid navresp px-4">
+                        <a class="navbar-brand" href="#">
+                            <img src="./assets/img/AuradX.png"  alt="">
+                            <span>STAKING</span>
+                        </a>
+                        
+                        <div class="  justify-content-end" id="navbarSupportedContent">
+                            <form class="d-flex gap-3" role="search">
+                                <div class="fv-icon-wrapp">
+                                    <img src="./assets/img/icon.png" width="30" alt="">
+                                </div>
+                                <button class=" fisrt_nav_btn  " type="submit">
+                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt="">00.00 DALLE2</button>
+                                <button id="connectbtn" onclick="connect()" class=" second_nav_btn " type="button">
+                                    <img src="./assets/img/wallet logo.png" width="25" alt=""> CONNECT</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="main_section">
+                <div class="first_row">
+                <div class="face_icon">
+                    <h3 class="mb-0">Ai</h3>
+                </div>
+                    <h3 class="mb-0">Powered Staking Protocol</h3>
+                </div>
+                <!----------->
+                <div class="three_col">
+                    <div class="staking_col_content">
+                        <div class="staking_box_item">
+                            <div class="ern"> Eran 0.5% / Day</div>
+                            <div class="apy"> Stake Your DALLE2 Tokens to earn 183% APY</div>
+                        </div>
+                        <div class="staking_box_item staking_row">
+                            <div class="tw_boxes_stake">
+
+                                <div class="boxmin">
+                                    <p class="mb-0">Minimum Stake Days</p>
+                                    <span>30</span>
+                                </div>
+                                <div class="boxmin">
+                                    <p class="mb-0">Total Rewards Earned</p>
+                                    <span>00 DALLE2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-------------->
+                <div class="main_boxes">
+                    <div class="ref">
+                        <span class="ref_heading">Affiliate Address : </span>
+                        <span
+                            class="ref_heading">https://stake.auradx.network/affaddress/0xe6FC2C843F89AED9371eA1E4B0AD190a6C0f2D
+                        </span>
+                    </div>
+                    <div class="exchange_unit">
+                        <div class="stun_withdraw fs_one_exchane">
+                            <div class="stk_icon">
+                                <img src="./assets/img/icon.png" width="30" alt=""> <span>Arbitrum</span>
+                            </div>
+                            <div class="list_token">
+                                <div class="list_token_item">
+                                    <p class="token_">Auradx Tokens</p>
+                                    <div class="name_token_bottom">
+                                        <div class="border_bx"></div>
+                                        <div class="rd_icon">
+                                            <img src="./assets/img/ax.png" width="40" alt="">
+                                        </div>
+                                        <div class="value_text">
+                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_token_item">
+                                    <p class="token_">DallE2F Tokens</p>
+                                    <div class="name_token_bottom">
+                                        <div class="border_bx"></div>
+                                        <div class="rd_icon">
+                                            <img src="./assets/img/ax.png" width="40" alt="">
+                                        </div>
+                                        <div class="value_text">
+                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_token_item">
+                                    <p class="token_">ETH Tokens</p>
+                                    <div class="name_token_bottom">
+                                        <div class="border_bx"></div>
+                                        <div class="rd_icon">
+                                            <img src="./assets/img/ax.png" width="40" alt="">
+                                        </div>
+                                        <div class="value_text">
+                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="stun_withdraw">
+                            <div class="section-center">
+                                <div class="tabs">
+                                    <!-- btn container -->
+                                    <div class="btn-container">
+                                        <button class="button live" data-id="step1">Stake</button>
+                                        <button class="button" data-id="step2">Unstake</button>
+                                        <button class="button" data-id="step3">Withdrawl</button>
+                                    </div>
+                                    <div class="tabs-content">
+                                        <!-- single item -->
+                                        <div class="content live" id="step1">
+                                            <div class="input_content">
+                                                <h4>Stake History</h4>
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        value="0.00"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="button-addon2">
+                                                    <button class="btn btn-outline-secondary label_btn" type="button"
+                                                        id="button-addon2"><img src="./assets/img/ax.png" width="30" alt=""></button>
+                                                </div>
+                                                <!-- ---- -->
+                                                <div class="days_section">
+                                                    <div class="hungry">
+                                                        <div class="selection">
+                                                          <input id="30days" name="hungry" type="radio">
+                                                          <label class="b1" for="30days">30 Days</label>
+                                                        </div>
+                                                        <div class="selection">
+                                                          <input id="90days" name="hungry" type="radio">
+                                                          <label class="b2" for="90days">90 Days</label>
+                                                        </div>
+                                                        <div class="selection">
+                                                          <input id="365days" name="hungry" type="radio">
+                                                          <label class="b3" for="365days">365 Days</label>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                
+                                                <!-- ---- -->
+                                                <div class="stake_now">
+                                                    <button>STAKE NOW
+                                                        <div class="spinner-border text-light" id="dsnone" role="status">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                          </div>
+                                                    </button>
+                                                </div>
+                                                <!-- ---------- -->
+                                                <div class="lockup_ps">
+                                                    <div class="lock_items">
+                                                        <span>Lockup Period</span>
+                                                        <span>30 Days</span>
+                                                    </div>
+                                                    <div class="lock_items">
+                                                        <span>Est . Transaction Fee</span>
+                                                        <span>$1.00</span>
+                                                    </div>
+                                                    <div class="lock_items">
+                                                        <span>Un Staking Fee</span>
+                                                        <span>10%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="content " id="step2">
+                                            <div class="div time-prd">
+                                                <div class="th_col_rew">
+                                                    <p>Time : </p>
+                                                    <p>show time</p>
+                                                </div>
+                                                <div class="th_col_rew">
+                                                    <p>staked Amount : </p>
+                                                    <p>520000</p>
+                                                </div>
+                                                <div class="th_col_rew">
+                                                    <p>Rewards : </p>
+                                                    <p>10000</p>
+                                                </div>
+                                            </div>
+                                            <div class="stake_now bs-1">
+                                                <button>UNSTAKE</button>
+                                            </div>
+                                        </div>
+                                        <div class="content" id="step3">
+                                            <div class="div time-prd">
+                                              
+                                                <div class="th_col_rew">
+                                                    <p>Rewards : </p>
+                                                    <p>10000</p>
+                                                </div>
+                                            </div>
+                                            <div class="stake_now bs-1">
+                                                <button>WITHDRAWL</button>
+                                            </div>
+                                        </div>
+                                        <!-- end of single item -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- -------- -->
+                        <div class="stun_withdraw px-0">
+                            <div class="available_stack">
+                                <div class="av_two_boxes">
+                                    <div class="stk_icon py-2">
+                                        <img src="./assets/img/icon.png" width="30" alt="">
+                                        <span>Arbitrum</span>
+                                    </div>
+                                    <div class="token_show_conn">
+                                        <div class="fs_one_token">
+                                            <p>Staked DallE2 Tokens</p>
+                                            <h3>00.00 <span>
+                                                    <img src="./assets/img/ax.png" width="40" alt=""></span>
+                                            </h3>
+                                        </div>
+                                        <div class="fs_one_token mt-4">
+                                            <p>Staked DallE2 Tokens</p>
+                                            <div class="two_ways">
+                                                <h3>00.00 <span><img src="./assets/img/ax.png" width="40"
+                                                            alt=""></span></h3>
+                                                <button>CLAIM</button>
+                                            </div>
+
+                                        </div>
+                                        <div class="sm_text">
+                                            <p>Withdrawl / Unstake Fee - 10%</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="av_two_boxes ls_box">
+                                    <div class="end_box mb-4">
+                                        <h5>Total Affiliate Rewards </h5>
+                                        <span>- 15%</span>
+                                    </div>
+                                    <div class="end_box mb-3">
+                                        <h5>Direct Affiliate (L1) </h5>
+                                        <span>- 5%</span>
+                                    </div>
+                                    <div class="aff_label_text mb-3">
+                                        <div class="level_desc">
+                                            <span> Affiliate Level 2</span>
+                                            <span> -4%</span>
+                                        </div>
+                                        <div class="level_desc">
+                                            <span> Affiliate Level 3</span>
+                                            <span> -3%</span>
+                                        </div>
+                                        <div class="level_desc">
+                                            <span> Affiliate Level 4</span>
+                                            <span> -2%</span>
+                                        </div>
+                                        <div class="level_desc">
+                                            <span> Affiliate Level 5</span>
+                                            <span> -1%</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+<!-- <script src="./assets/js/index.js"></script> -->
+<script>
+    const tabs1 = document.querySelector(".tabs");
+const btns = document.querySelectorAll(".button");
+const articles = document.querySelectorAll(".content");
+tabs1.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    // remove selected from other buttons
+    btns.forEach(function (btn) {
+      btn.classList.remove("live");
+    });
+    e.target.classList.add("live");
+    // hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("live");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("live");
+  }
+});
+</script>
+
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+
+<script src="./js/network.js"></script>
+<script src="./js/connect.js"></script>
+<script src="./js/contract.js"></script>
+
+<script src="./js/staking/ls.js"></script>
+<script src="./js/staking/dashboard.js"></script>
+<script src="./js/staking/dashbuy.js"></script>
+
+</html>

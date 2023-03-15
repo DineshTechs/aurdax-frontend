@@ -1,0 +1,255 @@
+/* ***************staking page tabs************** */
+.section-center{
+    margin-top: 20px;
+}
+.btn-container {
+    display: flex;
+    gap: 5px;
+  }
+  .button {
+    padding: 0.5rem 2rem;
+    border: none;
+    font-size: 1.3rem;
+    background: transparent;
+    color: #fff;
+
+    border-radius: 10px;
+    cursor: pointer;
+    border-radius:20px ;
+  }
+  .tabs-content {
+    width: 100%;
+    margin-top: 20px;
+
+  }
+  /* hide content */
+  .content {
+    display: none;
+  }
+  .button.live {
+    border: 2px solid #02b1ff;
+    color: white;
+
+  }
+  .content.live {
+    display: block;
+  }
+  @media only screen and (max-width:1261px){
+    .button{
+        padding: 0.2rem 2rem;
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width:988px){
+  .btn-container{
+      justify-content: center;
+  }
+  .button{
+      padding: 0.2rem 1rem;
+  }
+
+}
+/* ***************pool page tabs************** */
+.section-center2{
+  margin-top: 57px;
+}
+.btn-container2 {
+  display: flex;
+  gap: 5px;
+  border-bottom: 2px solid white;
+}
+.button2 {
+  padding: 0.5rem 2rem;
+  border: none;
+  font-size: 1.3rem;
+  background: transparent;
+  color: #fff;
+
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius:20px ;
+}
+.tabs-content2 {
+  width: 100%;
+  margin-top: 20px;
+
+}
+/* hide content */
+.content2 {
+  display: none;
+}
+.button2.live2 {
+  border: none !important;
+  color: white;
+  color: black;
+    background: #04ccff;
+    font-weight: 500;
+
+}
+.content2.live2 {
+  display: block;
+}
+@media only screen and (max-width:1261px){
+  .button2{
+    padding: 0.4rem 2rem;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width:988px){
+.btn-container2{
+    justify-content: start;
+}
+.button2{
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+}
+
+}
+@media only screen and (max-width:656px){
+  .button2 {
+    padding: 0.4rem 0.6rem;
+    font-size: 14px;
+}
+}
+@media only screen and (max-width:578px){
+  .button2 {
+    padding: 0.3rem 0.6rem;
+    font-size: 13px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:492px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 12px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:438px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 10px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:388px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 9px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+/* ***************farming page tabs************** */
+.section-center3{
+  margin-top: 57px;
+}
+.btn-container3 {
+  display: flex;
+  gap: 5px;
+  /* border-bottom: 2px solid white; */
+}
+.button3 {
+  padding: 0.5rem 2rem;
+  border: none;
+  font-size: 1.3rem;
+  background: transparent;
+  color: #fff;
+
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius:20px ;
+}
+.tabs-content3 {
+  width: 100%;
+  margin-top: 20px;
+
+}
+/* hide content */
+.content3 {
+  display: none;
+}
+.button3.live3 {
+  border: none !important;
+  color: white;
+  color: black;
+    background: #04ccff;
+    font-weight: 500;
+
+}
+.content3.live3 {
+  display: block;
+}
+/* @media only screen and (max-width:1261px){
+  .button2{
+    padding: 0.4rem 2rem;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width:988px){
+.btn-container2{
+    justify-content: start;
+}
+.button2{
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+}
+
+}
+@media only screen and (max-width:656px){
+  .button2 {
+    padding: 0.4rem 0.6rem;
+    font-size: 14px;
+}
+}
+@media only screen and (max-width:578px){
+  .button2 {
+    padding: 0.3rem 0.6rem;
+    font-size: 13px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:492px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 12px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:438px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 10px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+}
+@media only screen and (max-width:388px){
+  .button2 {
+    padding: 0.3rem 0.4rem;
+    font-size: 9px;
+}
+.btn-container2{
+  gap: 0;
+}
+
+} */

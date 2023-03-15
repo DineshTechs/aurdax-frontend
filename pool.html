@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuradX-Launchpad Pool</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/tab.css">
+   
+    <link rel="icon" type="image/x-icon" href="./assets/img/ax.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="main_section_wrapper">
+        <div class="bg_wrapper">
+
+
+            <div class="bg1">
+                <!-- <img src="./assets/img/bg.png" alt=""> -->
+            </div>
+
+            <div class="bg2">
+                <!-- <img src="./assets/img/bg.png" alt=""> -->
+            </div>
+        </div>
+        <div class="action">
+            <div class="overlay"></div>
+            <header>
+                <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+                    <div class="container-fluid navresp px-4">
+                        <a class="navbar-brand" href="#">
+                            <img src="./assets/img/AuradX.png" alt="">
+                            <span>Pool Page</span>
+                        </a>
+
+                        <div class="  justify-content-end" id="navbarSupportedContent">
+                            <form class="d-flex gap-3" role="search">
+                                <div class="fv-icon-wrapp">
+                                    <img src="./assets/img/icon.png" width="30" alt="">
+                                </div>
+                                <button class=" fisrt_nav_btn  " type="submit">
+                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt="">00.00 DALLE2</button>
+                                <button id="connectbtn" onclick="connect()"  class=" second_nav_btn " type="button">
+                                    <img src="./assets/img/wallet logo.png" width="25" alt=""> CONNECT</button>
+                            </form> 
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="main_section ">
+               <div class="poo_page_fs_row">
+                <div class="pool_fs_content">
+                    <div class="pool_fs">
+                        <div class="paid_test">
+                              <h3>Auradx Pad Test</h3>
+                              <div class="op_dell_btn">
+                                <button><span></span>Open</button>
+                                <button>DallE2</button>
+                              </div>
+                        </div>
+                        <div class="pool_text">
+                            <p class="des">AuradxPad is the premier IDO platform for projects building on Arbitrum Blockchain -- designed to provide an paradisal environment for building powerful new applications on Arbitrum</p>
+                        </div>
+                        <div class="white_list">
+                            <button>Whitelist</button>
+                            <button>Join Pool</button>
+                        </div>
+                    </div>
+                    <div class=" right_pool_fs">
+                        <div class="bal_content">
+                            <div class="left_bal">
+                                <p>Your ETH Balance</p>
+                                <p>0.000 ETH</p>
+                            </div>
+                            <div class="left_bal">
+                                <p>Your Pool Allocation</p>
+                                <p>0.000 </p>
+                            </div>
+                        </div>
+                        <div class="bal_content">
+                            <div class="left_bal">
+                                <p>Your DallE2 Balance</p>
+                                <p>0.00 </p>
+                            </div>
+                            <div class="left_bal">
+                                <p>Total Sold Tokens</p>
+                                <p>0.001 ETH</p>
+                            </div>
+                        </div>
+                        <div class="progress_bar">
+                            <label for=""> Swap Progress</label>
+                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar w-75"></div>
+                              </div>
+                              <div class="progress_value">
+                                <span>50%</span>
+                                <span>25/100 ETH</span>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+               
+               <div class="section-center2">
+                <div class="tabs2">
+                    <!-- btn container -->
+                    <div class="btn-container2">
+                        <button class="button2 live2" data-id="step4">Project Details</button>
+                        <button class="button2" data-id="step5">Whitelist Result</button>
+                        <button class="button2" data-id="step6">Emergency Withdrawl</button>
+                        <button class="button2" data-id="step7">Claim Tokens</button>
+                    </div>
+                    <div class="tabs-content2">
+                        <!-- single item -->
+                        <div class="content2 live2" id="step4">
+                            <div class="pool_information">
+                                <div class="pool_inform_row">
+                                    <div class="pool_info_content">
+                                        <div class="info_items">
+                                            <span>Pool Information</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Opens</span>
+                                            <span>06-03-2023 16:00 UTC</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Closes</span>
+                                            <span>06-03-2023 16:00 UTC</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Swap Price</span>
+                                            <span class="token1">1ETH = 1000 Tokens</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Hardcap</span>
+                                            <span class="tokeneth">10 ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="pool_info_content">
+                                        <div class="info_items">
+                                            <span>Token Information</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Name</span>
+                                            <span class="set_size">AurdX</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Token Symbol</span>
+                                            <span class="set_size">DallE2</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Token Decimal</span>
+                                            <span class="set_size">18</span>
+                                        </div>
+                                        <div class="info_items">
+                                            <span>Listing Price</span>
+                                            <span>10 ETH = 800 Tokens</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="content2" id="step5">
+                     
+                        </div>
+                        <div class="content2" id="step6">
+                            
+                        </div>
+                        <div class="content2" id="step7">
+                            
+                        </div>
+                        <!-- end of single item -->
+                    </div>
+                </div>
+            </div>
+               
+             
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+<!-- <script src="./assets/js/index.js"></script> -->
+<script>
+    const tabs2 = document.querySelector(".tabs2");
+const btns2 = document.querySelectorAll(".button2");
+const articles2 = document.querySelectorAll(".content2");
+tabs2.addEventListener("click", function (e) {
+  const id2 = e.target.dataset.id;
+  if (id2) {
+    // remove selected from other buttons
+    btns2.forEach(function (btn2) {
+      btn2.classList.remove("live2");
+    });
+    e.target.classList.add("live2");
+    // hide other articles
+    articles2.forEach(function (article2) {
+      article2.classList.remove("live2");
+    });
+    const element2 = document.getElementById(id2);
+    element2.classList.add("live2");
+  }
+});
+</script>
+
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script src="./js/network.js"></script>
+<script src="./js/connect.js"></script>
+
+</html>

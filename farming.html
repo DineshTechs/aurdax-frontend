@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuradX-Farming Dapp</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/farmingTab.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/ax.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="main_section_wrapper">
+        <div class="bg_wrapper">
+
+
+            <div class="bg1">
+                <!-- <img src="./assets/img/bg.png" alt=""> -->
+            </div>
+
+            <div class="bg2">
+                <!-- <img src="./assets/img/bg.png" alt=""> -->
+            </div>
+        </div>
+        <div class="action">
+            <div class="overlay"></div>
+            <header>
+                <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+                    <div class="container-fluid navresp px-4">
+                        <a class="navbar-brand" href="#">
+                            <img src="./assets/img/AuradX.png" alt="">
+                            <span>FARMING</span>
+                        </a>
+
+                        <div class="  justify-content-end" id="navbarSupportedContent">
+                            <form class="d-flex gap-3" role="search">
+                                <div class="fv-icon-wrapp">
+                                    <img src="./assets/img/icon.png" width="30" alt="">
+                                </div>
+                                <button class=" fisrt_nav_btn  " type="submit">
+                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt="">00.00 DALLE2</button>
+                                <button id="connectbtn" onclick="connect()"  class=" second_nav_btn " type="button">
+                                    <img src="./assets/img/wallet logo.png" width="25" alt=""> CONNECT</button>
+                            </form> 
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="main_section ">
+                <div class="first_row farming_row pt-2">
+                    <div class="left-farming">
+                        <h3 class="mb-0">Ai Farming Pools</h3>
+                    </div>
+                    <div class="right-farming">
+                        <div class="face_icon" style="background-size: contain;">
+                            <h3 class="mb-0">Ai</h3>
+                        </div>
+                        <h3 class="mb-0">Powered Yield Farming</h3>
+                    </div>
+                </div>
+                <!----------->
+                <section>
+                    <div class="tab-container">
+                      <!--  Tab Buttons  -->
+                      <div class="tabs">
+                        <div class="dai_main mt-5">
+                        <button class="tab active" style="border-top-left-radius: 16px;
+                        border-bottom-left-radius: 16px;">
+                            <div class="dai_main_content">
+                                <img src="./assets/img/ax.png" width="30" alt="">
+                                <img src="./assets/img/eth.png" width="30" alt="">
+                                <p>DALLE2 / ETH</p>
+                            </div>
+                        </button>
+                        <button class="tab">
+                            
+                            <div class="dai_main_content">
+                                <img src="./assets/img/usdt.png" width="30" alt="">
+                                <img src="./assets/img/eth.png" width="30" alt="">
+                                <p>USDT / ETH</p>
+                            </div>
+                        </button>
+                        <button class="tab"style="border-top-right-radius: 16px;
+                        border-bottom-right-radius: 16px;">
+                            <div class="dai_main_content bdr">
+                                <img src="./assets/img/dai.png" width="30" alt="">
+                                <img src="./assets/img/eth.png" width="30" alt="">
+                                <p>DAI / ETH</p>
+                            </div>
+                        </button>
+                    </div>
+                      </div>
+                      <!-- Tab Content  -->
+                      <div class="tab-content">
+                        <div class="main_boxes farming_main_box">
+                            <div class="deposit_bal_Section">
+                                <!-- <div class="avr_row">
+                                    <div class="av_items">
+                                        <div class="img_name">
+                                            <img src="./assets/img/eth.png" width="40" alt="">
+                                            <img src="./assets/img/ax.png" width="40" alt="">
+                                            <p class="mb-0">DallE2 / ETH LP</p>
+                                        </div>
+                                        <div class="bottom_dell rsp text-end">
+                                            <p>0.00 DallE2F Per Day</p>
+                                        </div>
+                                    </div>
+                                    <div class="av_items">
+                                        <div class="img_name">
+                                            <p>TVL</p>
+                                        </div>
+                                        <div class="bottom_dell text-center">
+                                            <p>$0.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="av_items">
+                                        <div class="img_name">
+                                            <p>Deposited</p>
+                                        </div>
+                                        <div class="bottom_dell text-center">
+                                            <p>$0.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="av_items">
+                                        <div class="img_name">
+                                            <p>Earn</p>
+                                        </div>
+                                        <div class="bottom_dell text-center">
+                                            <p>$0.00 / per day</p>
+                                        </div>
+                                    </div>
+                                    <div class="av_items">
+                                        <div class="img_name">
+                                            <p>APR</p>
+                                        </div>
+                                        <div class="bottom_dell text-center">
+                                            <p>365%</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="max_box">
+                                    <div class="max_wrapper">
+                                        <div class="av_items">
+                                            <div class="img_name">
+                                                <img src="./assets/img/ax.png" width="30" alt="">
+                                                <img src="./assets/img/eth.png" width="30" alt="">
+                                                <p class="mb-0">DallE2 / ETH LP</p>
+                                            </div>
+                                            <div class="bottom_dell rsp text-center">
+                                                <p><span>Stake</span> DallE2-ETH LP <span>To Get</span> DallE2F</p>
+                                            </div>
+                                        </div>
+                                        <div class="ap_lp">
+                                            <div class="left_apr_lp">
+                                                <span>APR</span>
+                                                <span>:</span>
+                                                <span>356%</span>
+                                            </div>
+                                            <div class="left_apr_lp">
+                                                <span>Total LP Tokens<br> Locked</span>
+                                                <span>:</span>
+                                                <span>00</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="max_space">
+                                    <div class="max_box_01">
+                                        <div class="box_fs_row">
+                                            <span>Deposit</span>
+                                            <span>Balance : 0</span>
+                                        </div>
+                                        <div class="max_input">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    id="button-addon2">MAX</button>
+                                            </div>
+                                        </div>
+                                        <div class="button_eval">
+                                            <button>INPUT DallE2-WETH-LP</button>
+                                            <button>FARM</button>
+                                        </div>
+                                    </div>
+                                    <div class="second_earned">
+                                        <div class="left_ear">
+                                            <p>DallE2F Earned</p>
+                                            <p>0.00</p>
+                                        </div>
+                                        <div class="right_ear">
+                                             <button>HARVEST</button>
+                                        </div>
+                                    </div>
+                                    <div class="third_icon_max_text">
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>Get DellE2-ETH LP</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>View Contract</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>See Pair Info</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                    </div>
+                                    <div class="max_wrapper">
+                                        <div class="av_items">
+                                            <div class="img_name">
+                                                <img src="./assets/img/usdt.png" width="30" alt="">
+                                                <img src="./assets/img/eth.png" width="30" alt="">
+                                                <p class="mb-0">USDT / ETH </p>
+                                            </div>
+                                            <div class="bottom_dell rsp text-center">
+                                                <p><span>Stake</span> USDT-ETH LP <span>To Get</span> USDT</p>
+                                            </div>
+                                        </div>
+                                        <div class="ap_lp">
+                                            <div class="left_apr_lp">
+                                                <span>APR</span>
+                                                <span>:</span>
+                                                <span>10%</span>
+                                            </div>
+                                            <div class="left_apr_lp">
+                                                <span>Total LP Tokens<br> Locked</span>
+                                                <span>:</span>
+                                                <span>00</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="max_space">
+                                    <div class="max_box_01">
+                                        <div class="box_fs_row">
+                                            <span>Deposit</span>
+                                            <span>Balance : 0</span>
+                                        </div>
+                                        <div class="max_input">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    id="button-addon2">MAX</button>
+                                            </div>
+                                        </div>
+                                        <div class="button_eval">
+                                            <button>INPUT USDT-WETH-LP</button>
+                                            <button>FARM</button>
+                                        </div>
+                                    </div>
+                                    <div class="second_earned">
+                                        <div class="left_ear">
+                                            <p>USDT Earned</p>
+                                            <p>0.00</p>
+                                        </div>
+                                        <div class="right_ear">
+                                             <button>HARVEST</button>
+                                        </div>
+                                    </div>
+                                    <div class="third_icon_max_text">
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>Get USDT-ETH LP</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>View Contract</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>See Pair Info</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                    </div>
+                                    <div class="max_wrapper">
+                                        <div class="av_items">
+                                            <div class="img_name">
+                                                <img src="./assets/img/dai.png" width="30" alt="">
+                                                <img src="./assets/img/eth.png" width="30" alt="">
+                                                <p class="mb-0">DAI / ETH LP</p>
+                                            </div>
+                                            <div class="bottom_dell rsp text-center">
+                                                <p><span>Stake</span> DAI-ETH LP <span>To Get</span> DAI</p>
+                                            </div>
+                                        </div>
+                                        <div class="ap_lp">
+                                            <div class="left_apr_lp">
+                                                <span>APR</span>
+                                                <span>:</span>
+                                                <span>7%</span>
+                                            </div>
+                                            <div class="left_apr_lp">
+                                                <span>Total LP Tokens<br> Locked</span>
+                                                <span>:</span>
+                                                <span>00</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="max_space">
+                                    <div class="max_box_01">
+                                        <div class="box_fs_row">
+                                            <span>Deposit</span>
+                                            <span>Balance : 0</span>
+                                        </div>
+                                        <div class="max_input">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    id="button-addon2">MAX</button>
+                                            </div>
+                                        </div>
+                                        <div class="button_eval">
+                                            <button>INPUT USDT-WETH-LP</button>
+                                            <button>FARM</button>
+                                        </div>
+                                    </div>
+                                    <div class="second_earned">
+                                        <div class="left_ear">
+                                            <p>DAI Earned</p>
+                                            <p>0.00</p>
+                                        </div>
+                                        <div class="right_ear">
+                                             <button>HARVEST</button>
+                                        </div>
+                                    </div>
+                                    <div class="third_icon_max_text">
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>Get DAI-ETH LP</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>View Contract</span>
+                                        </div>
+                                        <div class="th1">
+                                            <span><i class="bi bi-box-arrow-up-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                  </svg>
+                                            </i></span>
+                                            <span>See Pair Info</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                    </div>
+                                  
+                                </div>
+                                <!-- <div class="claim">
+                                    <p>When claimed, all rewards are sent to Arbitrum Wallet Immediatly.
+                                        Withdrawl Fee : 20%</p>
+                                </div> -->
+
+
+                            </div>
+                        </div>
+                      </div>
+                      <div class="tab-content hidden">
+                        text2
+                       
+                      </div>
+                      <div class="tab-content hidden">
+                      text3
+                      </div>
+                     
+                    </div>
+                  </section>
+                  
+                 
+                <!-------------->
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+<!-- <script src="./assets/js/index.js"></script> -->
+<script>
+   const tabs = document.querySelectorAll(".tab");
+const tabContent = document.querySelectorAll(".tab-content");
+
+tabs.forEach((tab, i) => {
+  tab.addEventListener("click", function () {
+    tabs.forEach(tab => tab.classList.remove("active"));
+    this.classList.add("active");
+    tabContent.forEach(content => content.classList.add("hidden"));
+    tabContent[i].classList.remove("hidden");
+  });
+});
+</script>
+
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script src="./js/network.js"></script>
+<script src="./js/connect.js"></script>
+
+</html>
