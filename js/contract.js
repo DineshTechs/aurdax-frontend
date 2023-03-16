@@ -1,5 +1,5 @@
 let tokenContract = "0x2b623eb7596259e47ecd8307817ebeeede82a63a" //token contract
-let stakingContract = "0xF38c535a7a27434b5b5451AFdfCcBacB322F54BE"; //stake contract
+let stakingContract = "0x87396FC8BdF135f6cEeEbF8db69548A3CE2F4A68"; //stake contract
 
 let tokenAbi = [{
     "inputs": [],

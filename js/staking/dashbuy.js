@@ -5,7 +5,7 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 async function stakeNow() {
 	var amount = document.getElementById("stakeAmt").value
 	if (amount == 0) {
-		return swal("Enter Stake Aamount!")
+		return swal("Enter Stake Amount!")
 	}
 	if (document.getElementById('30days').checked) {
 		stakeq("1")
