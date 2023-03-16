@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/ax.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                                     <img src="./assets/img/icon.png" width="30" alt="">
                                 </div>
                                 <button class=" fisrt_nav_btn  " type="submit">
-                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt="">00.00 DALLE2</button>
+                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt=""><span id="myBal1">00.00 DALLE2</span></button>
                                 <button id="connectbtn" onclick="connect()" class=" second_nav_btn " type="button">
                                     <img src="./assets/img/wallet logo.png" width="25" alt=""> CONNECT</button>
                             </form>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="boxmin">
                                     <p class="mb-0">Total Rewards Earned</p>
-                                    <span>00 DALLE2</span>
+                                    <span id="myRewards1">00 </span><span>DALLE2</span>
                                 </div>
                             </div>
                         </div>
@@ -85,9 +85,10 @@
                 <div class="main_boxes">
                     <div class="ref">
                         <span class="ref_heading">Affiliate Address : </span>
-                        <span
-                            class="ref_heading">https://stake.auradx.network/affaddress/0xe6FC2C843F89AED9371eA1E4B0AD190a6C0f2D
+                        <span id="affAddress"
+                            class="ref_heading">http://127.0.0.1:5500/index.html?ref=0x0000000000000000000000000000000000000000
                         </span>
+                        <span><i class="fa-regular fa-copy cp_icon" onclick="copyReff()"></i></span>
                     </div>
                     <div class="exchange_unit">
                         <div class="stun_withdraw fs_one_exchane">
@@ -103,7 +104,7 @@
                                             <img src="./assets/img/ax.png" width="40" alt="">
                                         </div>
                                         <div class="value_text">
-                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                            <p class="mb-0"><span id="tokenBal">0</span><span>DallE2</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +116,7 @@
                                             <img src="./assets/img/ax.png" width="40" alt="">
                                         </div>
                                         <div class="value_text">
-                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                            <p class="mb-0"><span id="famrBal">0</span><span>DallE2</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +128,7 @@
                                             <img src="./assets/img/ax.png" width="40" alt="">
                                         </div>
                                         <div class="value_text">
-                                            <p class="mb-0"><span>0</span><span>DallE2</span></p>
+                                            <p class="mb-0"><span id="ethBal">0</span><span>ETH</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,10 +149,10 @@
                                         <!-- single item -->
                                         <div class="content live" id="step1">
                                             <div class="input_content">
-                                                <h4>Stake History</h4>
+                                                <h4>Stake Amount</h4>
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control"
-                                                        value="0.00"
+                                                    <input id="stakeAmt" type="text" class="form-control"
+                                                        placeholder="0.00"
                                                         aria-label="Recipient's username"
                                                         aria-describedby="button-addon2">
                                                     <button class="btn btn-outline-secondary label_btn" type="button"
@@ -177,7 +178,7 @@
                                                 
                                                 <!-- ---- -->
                                                 <div class="stake_now">
-                                                    <button>STAKE NOW
+                                                    <button onclick="stakeNow()">STAKE NOW
                                                         <div class="spinner-border text-light" id="dsnone" role="status">
                                                             <span class="visually-hidden">Loading...</span>
                                                           </div>
@@ -194,7 +195,7 @@
                                                         <span>$1.00</span>
                                                     </div>
                                                     <div class="lock_items">
-                                                        <span>Un Staking Fee</span>
+                                                        <span>UnStaking Fee</span>
                                                         <span>10%</span>
                                                     </div>
                                                 </div>
@@ -204,20 +205,20 @@
                                         <div class="content " id="step2">
                                             <div class="div time-prd">
                                                 <div class="th_col_rew">
-                                                    <p>Time : </p>
-                                                    <p>show time</p>
+                                                    <p>Start Time : </p>
+                                                    <p id="time">-</p>
                                                 </div>
                                                 <div class="th_col_rew">
-                                                    <p>staked Amount : </p>
-                                                    <p>520000</p>
+                                                    <p>Staked Amount : </p>
+                                                    <p id="stakeAmount">0</p>
                                                 </div>
                                                 <div class="th_col_rew">
                                                     <p>Rewards : </p>
-                                                    <p>10000</p>
+                                                    <p id="myRewards2">0</p>
                                                 </div>
                                             </div>
                                             <div class="stake_now bs-1">
-                                                <button>UNSTAKE</button>
+                                                <button onclick="unstake()">UNSTAKE</button>
                                             </div>
                                         </div>
                                         <div class="content" id="step3">
@@ -225,11 +226,11 @@
                                               
                                                 <div class="th_col_rew">
                                                     <p>Rewards : </p>
-                                                    <p>10000</p>
+                                                    <p id="myRewards3">0</p>
                                                 </div>
                                             </div>
                                             <div class="stake_now bs-1">
-                                                <button>WITHDRAWL</button>
+                                                <button onclick="withdraw()">WITHDRAW</button>
                                             </div>
                                         </div>
                                         <!-- end of single item -->
@@ -248,16 +249,16 @@
                                     <div class="token_show_conn">
                                         <div class="fs_one_token">
                                             <p>Staked DallE2 Tokens</p>
-                                            <h3>00.00 <span>
+                                            <h3> <span id="stakeAmount2">  00.00</span> <span>
                                                     <img src="./assets/img/ax.png" width="40" alt=""></span>
                                             </h3>
                                         </div>
-                                        <div class="fs_one_token mt-4">
-                                            <p>Staked DallE2 Tokens</p>
+                                        <div class="fs_one_token mt-2">
+                                            <p>Rewards Earned</p>
                                             <div class="two_ways">
-                                                <h3>00.00 <span><img src="./assets/img/ax.png" width="40"
+                                                <h3><span id="myRewards4">00.00</span> <span><img src="./assets/img/ax.png" width="40"
                                                             alt=""></span></h3>
-                                                <button>CLAIM</button>
+                                                <button onclick="withdraw()">CLAIM</button>
                                             </div>
 
                                         </div>
@@ -268,11 +269,15 @@
 
                                 </div>
                                 <div class="av_two_boxes ls_box">
-                                    <div class="end_box mb-4">
+                                    <div class="end_box mb-2">
+                                        <h5>Total Affiliate Earned </h5>
+                                        <span id="affliateRewards"> 0</span>
+                                    </div>
+                                    <div class="end_box mb-2">
                                         <h5>Total Affiliate Rewards </h5>
                                         <span>- 15%</span>
                                     </div>
-                                    <div class="end_box mb-3">
+                                    <div class="end_box mb-2">
                                         <h5>Direct Affiliate (L1) </h5>
                                         <span>- 5%</span>
                                     </div>
@@ -307,7 +312,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
-<!-- <script src="./assets/js/index.js"></script> -->
+<script src="./assets/js/index.js"></script>
 <script>
     const tabs1 = document.querySelector(".tabs");
 const btns = document.querySelectorAll(".button");
@@ -333,6 +338,7 @@ tabs1.addEventListener("click", function (e) {
 <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
 <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script src="./js/network.js"></script>
 <script src="./js/connect.js"></script>

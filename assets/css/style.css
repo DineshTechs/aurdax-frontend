@@ -3427,6 +3427,10 @@ width: 55px;
   .time-prd{
     margin-top: 90px;
   }
+  .cp_icon{
+    margin-left: 10px;
+    cursor: pointer;
+  }
 
 
 

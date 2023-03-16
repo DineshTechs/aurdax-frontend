@@ -347,6 +347,10 @@ let stakingAbi = [{
         "internalType": "address",
         "name": "_owner",
         "type": "address"
+    }, {
+        "internalType": "address",
+        "name": "_stakingToken",
+        "type": "address"
     }],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -432,31 +436,6 @@ let stakingAbi = [{
     "name": "Withdrawn",
     "type": "event"
 }, {
-    "anonymous": false,
-    "inputs": [{
-        "indexed": true,
-        "internalType": "address",
-        "name": "staker",
-        "type": "address"
-    }, {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-    }, {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "reward",
-        "type": "uint256"
-    }, {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "level",
-        "type": "uint256"
-    }],
-    "name": "rewards",
-    "type": "event"
-}, {
     "constant": true,
     "inputs": [{
         "internalType": "address",
@@ -473,57 +452,9 @@ let stakingAbi = [{
     "stateMutability": "view",
     "type": "function"
 }, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
-    }],
-    "name": "IntervalRewardsOf2",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
     "constant": false,
     "inputs": [],
     "name": "acceptOwnership",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [],
-    "name": "divider1",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [],
-    "name": "divider2",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": false,
-    "inputs": [],
-    "name": "emergencyWithdraw",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -544,42 +475,6 @@ let stakingAbi = [{
     "constant": true,
     "inputs": [],
     "name": "minimunStake1",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [],
-    "name": "minimunStake2",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [],
-    "name": "multiplier1",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [],
-    "name": "multiplier2",
     "outputs": [{
         "internalType": "uint256",
         "name": "",
@@ -640,38 +535,6 @@ let stakingAbi = [{
     "constant": true,
     "inputs": [{
         "internalType": "address",
-        "name": "account",
-        "type": "address"
-    }],
-    "name": "referralEarnings",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
         "name": "",
         "type": "address"
     }],
@@ -691,71 +554,7 @@ let stakingAbi = [{
         "name": "",
         "type": "address"
     }],
-    "name": "refferedEarningLevel1",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-    }],
-    "name": "refferedEarningLevel2",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-    }],
-    "name": "refferedEarningLevel3",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-    }],
-    "name": "refferedEarningLevel4",
-    "outputs": [{
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-    }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-    }],
-    "name": "refferedEarningLevel5",
+    "name": "refferedEarning",
     "outputs": [{
         "internalType": "uint256",
         "name": "",
@@ -779,26 +578,34 @@ let stakingAbi = [{
 }, {
     "constant": false,
     "inputs": [{
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+    }, {
+        "internalType": "uint256",
+        "name": "stakeType",
+        "type": "uint256"
+    }, {
         "internalType": "address",
-        "name": "referral",
+        "name": "refferal",
         "type": "address"
     }],
-    "name": "stake1",
+    "name": "stake",
     "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
 }, {
-    "constant": false,
-    "inputs": [{
-        "internalType": "address",
-        "name": "referral",
+    "constant": true,
+    "inputs": [],
+    "name": "stakingToken",
+    "outputs": [{
+        "internalType": "contract IERC20",
+        "name": "",
         "type": "address"
     }],
-    "name": "stake2",
-    "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
 }, {
     "constant": true,
@@ -825,17 +632,21 @@ let stakingAbi = [{
     "stateMutability": "view",
     "type": "function"
 }, {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "unstake1",
-    "outputs": [],
+    "name": "totalStaked3",
+    "outputs": [{
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
 }, {
     "constant": false,
     "inputs": [],
-    "name": "unstake2",
+    "name": "unstake1",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -846,55 +657,11 @@ let stakingAbi = [{
         "internalType": "uint256",
         "name": "amount1",
         "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "amount2",
-        "type": "uint256"
     }],
     "name": "updateMinimumStakeAmount",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
-    "type": "function"
-}, {
-    "constant": false,
-    "inputs": [{
-        "internalType": "uint256",
-        "name": "m1",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "d1",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "m2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "d2",
-        "type": "uint256"
-    }],
-    "name": "updateMultiDivider",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-}, {
-    "constant": true,
-    "inputs": [{
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
-    }],
-    "name": "upline",
-    "outputs": [{
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-    }],
-    "payable": false,
-    "stateMutability": "view",
     "type": "function"
 }, {
     "constant": true,
@@ -916,42 +683,6 @@ let stakingAbi = [{
         "internalType": "uint256",
         "name": "lockTime1",
         "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "previousRewardBal1",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "rewardCalculationDate1",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "rewardsWithdrawn1",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "stakedBal2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "stakedTime2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "lockTime2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "previousRewardBal2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "rewardCalculationDate2",
-        "type": "uint256"
-    }, {
-        "internalType": "uint256",
-        "name": "rewardsWithdrawn2",
-        "type": "uint256"
     }],
     "payable": false,
     "stateMutability": "view",
@@ -964,15 +695,7 @@ let stakingAbi = [{
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
-}, {
-    "constant": false,
-    "inputs": [],
-    "name": "withdrawReward2",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-}];
+}]
 
 let contract1;
 let contract2;

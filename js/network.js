@@ -1,23 +1,23 @@
 async function testNetwork() {
 
-  try {
-    await ethereum.request({
-      method: 'wallet_addEthereumChain',
-      params: [{
-        chainId: '0x66EED',
-        chainName: 'Arbitrum Goerli Testnet',
-        rpcUrls: ['https://goerli-rollup.arbitrum.io/rpc'] /* ... */ ,
-        blockExplorerUrls: ['https://goerli.arbiscan.io/'],
-        nativeCurrency: {
-          name: 'ETH',
-          symbol: 'ETH', // 2-6 characters long
-          decimals: 18
-        }
-      }, ],
-    });
-  } catch (addError) {
-    alert(addError)
-  }
+  // try {
+  //   await ethereum.request({
+  //     method: 'wallet_addEthereumChain',
+  //     params: [{
+  //       chainId: '0x66EED',
+  //       chainName: 'Arbitrum Goerli Testnet',
+  //       rpcUrls: ['https://goerli-rollup.arbitrum.io/rpc'] /* ... */ ,
+  //       blockExplorerUrls: ['https://goerli.arbiscan.io/'],
+  //       nativeCurrency: {
+  //         name: 'ETH',
+  //         symbol: 'ETH', // 2-6 characters long
+  //         decimals: 18
+  //       }
+  //     }, ],
+  //   });
+  // } catch (addError) {
+  //   alert(addError)
+  // }
 
 }
 

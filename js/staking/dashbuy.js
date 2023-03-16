@@ -2,180 +2,131 @@
 web3.eth.defaultAccount = web3.eth.accounts[0];
 ///////////////////////////
 
-
-async function stake(typeOfStake) {
-	web3.eth.defaultAccount = web3.eth.accounts[0];
-	var amount = 0;
-	if (typeOfStake == '1') {
-		amount = document.getElementById("stake1").value;
+async function stakeNow() {
+	var amount = document.getElementById("stakeAmt").value
+	if (amount == 0) {
+		return swal("Enter Stake Aamount!")
 	}
-	else if (typeOfStake == '2') {
-		amount = document.getElementById("stake2").value;
+	if (document.getElementById('30days').checked) {
+		stakeq("1")
+	} else if (document.getElementById('90days').checked) {
+		stakeq("2")
+	} else if (document.getElementById('365days').checked) {
+		stakeq("3")
+	} else {
+		swal("Select Lock Period!")
 	}
-	else {
-		alert("Error Contact Developer!")
-	}
-
-	if(amount<1000){
-		return alert("Minimum Yield Amount is 1000!")
-	}
-
-	stakenow(amount, typeOfStake)
-	//document.getElementById("tostakeAmount").value;
-	//alert(amount);
-	//localStorage.setItem("level",id);
-	//alert(amount);
-
-	//var str = await getAccountAddress();
-	//contract2 = new web3.eth.Contract(abi2, contractaddress2);
-	////////////////////////////////////
-
-	// const res = await contract1.methods.allowance(str, contractaddress2).call();
-	// console.log(res);
-	// if (res >= amount * 1e18) {
-	// 	stakenow(amount, typeOfStake);
-	// }
-	// else {
-	// 	const result = await contract1.methods.approve(contractaddress2, web3.utils.toWei(amount)).send({ from: str },(err,res) =>{
-	// 		if(!err){
-	// 			if (typeOfStake == '1') {
-	// 				document.getElementById("stakeSpinner1").style ="display:block;"
-	// 			}
-	// 			else{
-	// 				document.getElementById("stakeSpinner2").style ="display:block;"
-	// 			}
-				
-	// 		}
-	// 		// else{
-	// 		// 	document.getElementById("stakeSpinner1").style ="display:none;"
-	// 		// 	document.getElementById("stakeSpinner2").style ="display:none;"
-	// 		// }
-	// 	});
-	// 	//console.log(result.blockHash);
-	// 	if (result) {			
-	// 		document.getElementById("stakeSpinner1").style ="display:none;"
-	// 		document.getElementById("stakeSpinner2").style ="display:none;"
-	// 		stakenow(amount, typeOfStake);
-	// 		//trackTransaction(result.blockHash);
-	// 	}
-	// }
-
-
 }
 
-async function stakenow(amount, typeOfStake) {
+
+async function stakeq(typeOfStake) {
+	var amount = document.getElementById("stakeAmt").value
 	//hideLoadingApproval()
 	var str = await getAccountAddress();
 	web3.eth.defaultAccount = web3.eth.accounts[0];
-	let result
-	if (typeOfStake == '1') {
-		result = await contract2.methods.stake1(radd).send({ from: str,value:web3.utils.toWei(amount) });
-		if(result){
-			alert("Successfully Yield is Completed!")
-		}
-	}
-	else if (typeOfStake == '2') {
-		result = await contract2.methods.stake2(radd).send({ from: str,value:web3.utils.toWei(amount) });
-		if(result){
-			alert("Successfully Yield is Completed!")
-		}
-	}
-	else {
-		//result = await contract2.methods.stake3(web3.utils.toWei(amount), radd).send({ from: str });
-	}
+	//let result
 
+
+	contract1 = new web3.eth.Contract(tokenAbi, tokenContract);
+	contract2 = new web3.eth.Contract(stakingAbi, stakingContract);
+	////////////////////////////////////
+
+	const res = await contract1.methods.allowance(str, stakingContract).call();
+	console.log(res);
+	if (res >= amount * 1e18) {
+		stake(typeOfStake);
+	} else {
+		const result = await contract1.methods.approve(stakingContract, web3.utils.toWei(amount)).send({
+			from: str
+		}, (err, res) => {
+			if (!err) {
+				document.getElementById("dsnone").style = "display:block;"
+			}
+		});
+		//console.log(result.blockHash);
+		if (result) {
+			document.getElementById("dsnone").style = "display:none;"
+			document.getElementById("dsnone").style = "display:none;"
+			stake(typeOfStake);
+			//trackTransaction(result.blockHash);
+		}
+	}
 
 }
 
 
+async function stake(typeOfStake) {
+	var str = await getAccountAddress();
+	contract2 = new web3.eth.Contract(stakingAbi, stakingContract);
+	var amount = document.getElementById("stakeAmt").value
+	result = await contract2.methods.stake(web3.utils.toWei(amount), typeOfStake, radd).send({
+		from: str
+	});
+	if (result) {
+		swal("Successfully Stake is Completed!")
+	}
 
-async function unstake(typeUnstake) {
+}
+
+
+async function unstake() {
 	var str = await getAccountAddress();
 	web3.eth.defaultAccount = web3.eth.accounts[0];
 	let result;
-	if (typeUnstake == '1') {
-		result = await contract2.methods.unstake1().send({ from: str });
-
-	}
-	else if (typeUnstake == '2') {
-		result = await contract2.methods.unstake2().send({ from: str });
-
-	}
-	else {
-		//result = await contract2.methods.unstake3().send({ from: str });
-
-	}
-
+	result = await contract2.methods.unstake1().send({
+		from: str
+	});
 }
 
 
-async function withdraw(typeOfWithdraw) {
+async function withdraw() {
 	var str = await getAccountAddress();
 	web3.eth.defaultAccount = web3.eth.accounts[0];
 	let result;
-	if (typeOfWithdraw == '1') {
-		if(Number(document.getElementById("rewardsAvailable1").innerHTML) > 0 || Number(document.getElementById("previousRewardBal1").innerHTML) > 0){
-		result = await contract2.methods.withdrawReward1().send({ from: str });
-		if(result){
-			alert("Your Withdrawl is Successfully Completed!")
-		}
-		}else{
-			alert("No Amount Available!")
-		}
-	}
-	else if (typeOfWithdraw == '2') {
-		if(Number(document.getElementById("rewardsAvailable2").innerHTML) > 0 || Number(document.getElementById("previousRewardBal2").innerHTML) > 0){
-			result = await contract2.methods.withdrawReward2().send({ from: str });
-			if(result){
-				alert("Your Withdrawl is Successfully Completed!")
-			}
-			}else{
-				alert("No Amount Available!")
-			}
-	}
-	else {
-		//result = await contract2.methods.withdrawReward3().send({ from: str });
-	}
 
+	if (Number(document.getElementById("myRewards3").innerHTML) > 0) {
+		result = await contract2.methods.withdrawReward1().send({
+			from: str
+		});
+		if (result) {
+			swal("Your Withdrawl is Successfully Completed!")
+		}
+	} else {
+		swal("No Amount Available!")
+	}
 
 }
 
-async function switchNetwork(){
-	// try {
-	// 	await ethereum.request({
-	// 	  method: 'wallet_switchEthereumChain',
-	// 	  params: [{ chainId: '0x7E6D' }],
-	// 	});
-	//   } catch (switchError) {
-	// 	// This error code indicates that the chain has not been added to MetaMask.
-	// 	if (switchError.code === 4902) {
-		  try {
-			await ethereum.request({
-			  method: 'wallet_addEthereumChain',
-			  params: [
-				{
-				  chainId: '0x1DCE',
-				  chainName: 'VRB20',
-				  rpcUrls: ['https://mainnet-rpc.vrblocksscan.io/'] /* ... */,
-				  blockExplorerUrls: ['https://vrblocksscan.io/'],
-				  nativeCurrency: {
-					name: 'VRB',
-					symbol: 'VRB', // 2-6 characters long
-					decimals: 18
-				  }
-				},
-			  ],
-			});
-		  } catch (addError) {
-			alert(addError)
-			// handle "add" error
-		  }
-		//}
-		// handle other "switch" errors
-	  //}
+// async function switchNetwork() {
+// 	// try {
+// 	// 	await ethereum.request({
+// 	// 	  method: 'wallet_switchEthereumChain',
+// 	// 	  params: [{ chainId: '0x7E6D' }],
+// 	// 	});
+// 	//   } catch (switchError) {
+// 	// 	// This error code indicates that the chain has not been added to MetaMask.
+// 	// 	if (switchError.code === 4902) {
+// 	try {
+// 		await ethereum.request({
+// 			method: 'wallet_addEthereumChain',
+// 			params: [{
+// 				chainId: '0x1DCE',
+// 				chainName: 'VRB20',
+// 				rpcUrls: ['https://mainnet-rpc.vrblocksscan.io/'] /* ... */ ,
+// 				blockExplorerUrls: ['https://vrblocksscan.io/'],
+// 				nativeCurrency: {
+// 					name: 'VRB',
+// 					symbol: 'VRB', // 2-6 characters long
+// 					decimals: 18
+// 				}
+// 			}, ],
+// 		});
+// 	} catch (addError) {
+// 		alert(addError)
+// 		// handle "add" error
+// 	}
+// 	//}
+// 	// handle other "switch" errors
+// 	//}
 
-}
-
-
-
-
+// }

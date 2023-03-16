@@ -1,22 +1,15 @@
-//////**********staking page tabs******************
-// const tabs1 = document.querySelector(".tabs");
-// const btns = document.querySelectorAll(".button");
-// const articles = document.querySelectorAll(".content");
-// tabs1.addEventListener("click", function (e) {
-//   const id = e.target.dataset.id;
-//   if (id) {
-//     // remove selected from other buttons
-//     btns.forEach(function (btn) {
-//       btn.classList.remove("live");
-//     });
-//     e.target.classList.add("live");
-//     // hide other articles
-//     articles.forEach(function (article) {
-//       article.classList.remove("live");
-//     });
-//     const element = document.getElementById(id);
-//     element.classList.add("live");
-//   }
-// });
-////**********pool page tabs******************
+function copyReff() {
+    var copyText = document.getElementById('affAddress')
+    navigator.clipboard.writeText(copyText.innerHTML);
 
+    // swal("Copy", "success",{
+    //     button:false
+    // })
+    swal({
+        icon: "success",
+        button: false,
+        text: "Copy",
+        timer: 1000
+
+    })
+}
