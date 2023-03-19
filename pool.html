@@ -44,7 +44,7 @@
                                     <img src="./assets/img/icon.png" width="30" alt="">
                                 </div>
                                 <button class=" fisrt_nav_btn  " type="submit">
-                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt="">00.00 DALLE2</button>
+                                    <img src="./assets/img/ax.png" class="pe-1" width="25" alt=""><span id="tokenBal2">0 DALLE2</span></button>
                                 <button id="connectbtn" onclick="connect()"  class=" second_nav_btn " type="button">
                                     <img src="./assets/img/wallet logo.png" width="25" alt=""> CONNECT</button>
                             </form> 
@@ -75,17 +75,17 @@
                         <div class="bal_content">
                             <div class="left_bal">
                                 <p>Your ETH Balance</p>
-                                <p>0.000 ETH</p>
+                                <p id="ethBal">0.000 ETH</p>
                             </div>
                             <div class="left_bal">
                                 <p>Your Pool Allocation</p>
-                                <p>0.000 </p>
+                                <p id="claimableToken">0.000 </p>
                             </div>
                         </div>
                         <div class="bal_content">
                             <div class="left_bal">
                                 <p>Your DallE2 Balance</p>
-                                <p>0.00 </p>
+                                <p id="tokenBal">0.00 </p>
                             </div>
                             <div class="left_bal">
                                 <p>Total Sold Tokens</p>
@@ -95,11 +95,11 @@
                         <div class="progress_bar">
                             <label for=""> Swap Progress</label>
                             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar w-75"></div>
+                                <div id="app-progress-bar" class="progress-bar " style="width:30%;"></div>
                               </div>
                               <div class="progress_value">
-                                <span>50%</span>
-                                <span>25/100 ETH</span>
+                                <span id="progress-percentage">50%</span>
+                                <span id="investedValue">25/100 ETH</span>
                               </div>
                         </div>
                     </div>
@@ -112,6 +112,7 @@
                     <div class="btn-container2">
                         <button class="button2 live2" data-id="step4">Project Details</button>
                         <button class="button2" data-id="step5">Whitelist Result</button>
+                        <button class="button2" data-id="step12">Swap</button>
                         <button class="button2" data-id="step6">Emergency Withdrawl</button>
                         <button class="button2" data-id="step7">Claim Tokens</button>
                     </div>
@@ -166,14 +167,304 @@
                             </div>
 
                         </div>
+                        <div class="content2 " id="step12">
+                            <div class="md:w-2/5 xl:w-1/3 mb-3 rounded-md md:mb-0 lg:sticky lg:top-3 active-text"
+                                style="margin: auto;
+                        margin-top: 20px !important;">
+                                <div
+                                    class=".bg-gradient-to-b rounded-lg shadow-2xl from-gamefiDark-630/30 text-white active-text">
+                                    <div class="space-y-6 p-3 rounded-md active-text"
+                                        style="background-color:#000000b8; border-radius: 8px;">
+
+                                        <div class="space-y-3 relative text-center active-text">
+                                            <div class="p-3 rounded-2xl relative pt-0 active-text">
+                                                <!-- ------------------------------------------show menu--------------------------- -->
+                                                <div class="text-center active-text" id="visible"
+                                                    style="display: block;">
+                                                    <div role="alert"
+                                                        class="chakra-alert css-vewta4 mb-3 active-text">
+                                                        <span class="chakra-alert__icon css-15539z7"><svg
+                                                                viewBox="0 0 24 24" focusable="false"
+                                                                class="chakra-icon css-fi0ww0">
+                                                                <path fill="currentColor"
+                                                                    d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z">
+                                                                </path>
+                                                            </svg></span>
+                                                        <span style="font-size: 14px;">The investment limit is set
+                                                            at 5 BNB
+                                                            per wallet.</span>
+                                                    </div>
+                                                    <div class="col-12 active-text">
+                                                        <div class="row active-text" style="justify-content:center">
+                                                            <div class="col mb-2 active-text" id="first-box">
+                                                                <div class="left active-text">
+                                                                    <span>from</span>
+                                                                    <!-- <p>10</p> -->
+                                                                    <input id="amount" oninput="update()" type="number" value="0"
+                                                                        style=" background: none; border: none; outline: none;padding: 4px 2px; "
+                                                                        class="focus-none field">
+                                                                </div>
+                                                                <div class="right active-text">
+                                                                    <span style="visibility: hidden;">Max.0
+                                                                    </span>
+                                                                    <div class="images active-text" style="display: flex;
+                                                             justify-content: end;
+                                                             align-items: center;">
+                                                                        <img id="myBnb" width="20px"
+                                                                            src="./assets/img/eth_tp_icon.png" alt="">
+                                                                        <span>ETH</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 mb-2 active-text">
+                                                                <i class="bi bi-arrow-down">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16" fill="currentColor"
+                                                                        class="bi bi-arrow-down" viewBox="0 0 16 16"
+                                                                        style="margin: auto;">
+                                                                        <path fill-rule="evenodd"
+                                                                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </div>
+
+                                                            <div class="col mb-3 active-text" id="first-box">
+                                                                <div class="left active-text">
+                                                                    <span>To</span>
+                                                                    <!-- <p>6666.66</p> -->
+                                                                    <input id="tokenAmount" type="number" value="0"
+                                                                        style="background: none ;  border: none; outline: none;padding: 4px 2px;"
+                                                                        class="field">
+                                                                </div>
+                                                                <div class="right active-text">
+                                                                    <span style="visibility: hidden;">Max.0
+                                                                    </span>
+                                                                    <div class="images active-text" style="display: flex;
+                                                             justify-content: end;
+                                                             align-items: center;">
+                                                                        <img id="myBnb" width="30px"
+                                                                            src="./assets/img/icon.png" alt="">
+                                                                        <span>AuradX</span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row active-text">
+                                                            <div class="col-lg-10 offset-md-1 last-btn active-text">
+                                                                <div class="mb-3 active-text"
+                                                                    style="color: #cbe9f3;">Your
+                                                                    address is <span id="whitelist"> NOT WHITELISTED</span></div>
+                                                                <button onclick="buy()">Buy</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="absolute right-0 active-text">
+                                                <div class="text-right -mt-2 text-sm active-text"
+                                                    style="display: none;">
+                                                    <a href=""
+                                                        target="_blank" rel="noreferrer"
+                                                        class="text-gray-500 border-gray-500 border-b border-dashed no-underline hover:border-0 hover:text-gray-500">How
+                                                        to participate</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-6 active-text">
+                                            <div class="active-text">
+                                                <div class="text-2xl brand-text active-text li_bggradin">1
+                                                    <!-- -->BUSD
+                                                    <!-- --> =
+                                                    <!-- -->6.25
+                                                    <!-- -->
+                                                    <!-- -->AuradX
+                                                </div>
+                                                <div class="text-lg brand-text active-text">1
+                                                    <!-- -->AuradX
+                                                    <!-- --> =
+                                                    <!-- -->0.16
+                                                    <!-- -->
+                                                    <!-- -->BUSD
+                                                </div>
+                                                <!-- <div class="text-lg brand-text">Min.
+                                             Allocation
+                                              =
+                                             $200
+                                         </div>  -->
+                                            </div>
+                                            <div class="space-y-1 active-text">
+                                                <div
+                                                    class="flex justify-between text-sm tracking-wide space-x-3 active-text">
+                                                    <div class="active-text">
+                                                    </div>
+                                                    <div class="font-medium opacity-90 text-right active-text">
+                                                        <span class="text-main "><span id="myBarPercent">98.00
+                                                                %</span>
+                                                            <!-- -->
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="progress h-1.5 active-text">
+                                                    <div class="progress-bar progressbar active-text"
+                                                        role="progressbar" aria-label="Info example"
+                                                        style="width: 70%" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100" id="myBar">
+                                                    </div>
+                                                </div>
+                                                <!-- </div> -->
+                                                <div
+                                                    class="flex justify-between text-sm tracking-wide space-x-3 mt-1 active-text">
+                                                    <div class="text-ignored opacity-90 flex-shrink-0 active-text">
+                                                        <!-- 150,001 -->
+                                                        
+                                                    </div>
+                                                    <div class="text-ignored opacity-90 text-right active-text">
+
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space-y-3 active-text">
+                                                <div class="flex items-center space-x-2 text-sm active-text"
+                                                    style="display: none !important;">
+                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                        viewBox="0 0 640 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M634.91 154.88C457.74-8.99 182.19-8.93 5.09 154.88c-6.66 6.16-6.79 16.59-.35 22.98l34.24 33.97c6.14 6.1 16.02 6.23 22.4.38 145.92-133.68 371.3-133.71 517.25 0 6.38 5.85 16.26 5.71 22.4-.38l34.24-33.97c6.43-6.39 6.3-16.82-.36-22.98zM320 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm202.67-83.59c-115.26-101.93-290.21-101.82-405.34 0-6.9 6.1-7.12 16.69-.57 23.15l34.44 33.99c6 5.92 15.66 6.32 22.05.8 83.95-72.57 209.74-72.41 293.49 0 6.39 5.52 16.05 5.13 22.05-.8l34.44-33.99c6.56-6.46 6.33-17.06-.56-23.15z">
+                                                        </path>
+                                                    </svg>
+                                                    <span>IDO and distribution on BNB Chain
+                                                        <!-- -->
+                                                    </span>
+
+                                                </div>
+                                                <table class="text-sm">
+                                                    <tbody class="">
+                                                        <tr>
+                                                            <td class="pr-3 pb-2 pl-0"
+                                                                style="display: flex; align-items:center;">
+                                                                <svg stroke="currentColor" fill="currentColor"
+                                                                    class="mr-2" stroke-width="0"
+                                                                    viewBox="0 0 512 512" height="1em" width="1em"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM464 96H345.94c-21.38 0-32.09 25.85-16.97 40.97l32.4 32.4L288 242.75l-73.37-73.37c-12.5-12.5-32.76-12.5-45.25 0l-68.69 68.69c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L192 237.25l73.37 73.37c12.5 12.5 32.76 12.5 45.25 0l96-96 32.4 32.4c15.12 15.12 40.97 4.41 40.97-16.97V112c.01-8.84-7.15-16-15.99-16z">
+                                                                    </path>
+                                                                </svg>
+                                                                Fixed Price
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="pr-3 pb-2 pl-0"
+                                                                style="display: flex; align-items:center;">
+                                                                <svg stroke="currentColor" fill="currentColor"
+                                                                    class="mr-2" stroke-width="0"
+                                                                    viewBox="0 0 448 512" height="1em" width="1em"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z">
+                                                                    </path>
+                                                                </svg>
+                                                                30 Aug, 13:30 – 30 Aug,
+                                                                13:30
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                         <div class="content2" id="step5">
-                     
+                            <div class="bg-gamefiDark-630/30 clipped-t-r rounded-md p-7 text-sm flex flex-col xl:flex-row gap-6 mt-4 active-text" style="justify-content: center;
+                            text-align: center;">
+                            <div class="pr-6 resp123 xl:border-r border-gamefiDark-630/50 active-text" id="winer-box" style="border-right: none !important;">
+                                <p class="font-mechanic uppercase  mb-6 text-white winn">Winner
+                                    Lookup</p>
+                                <input type="text" placeholder="Enter wallet address" class="w-full sss text-sm rounded-sm bg-gamefiDark-650/50 border-gamefiDark-400 mb-3 text-white" value="">
+                                <div class="w-full mb-3 active-text">
+                                  
+                                </div>
+                                <div class="flex active-text srch_btn">
+                                    <button class="mx-auto py-2 px-10 font-bold font-mechanic text-[13px] uppercase hover:opacity-95 cursor-pointer clipped-t-r bg-gamefiGreen-500 text-gamefiDark-900 inline-block text-center ss_btn" style="background: #3ac2ffa1!important;
+                                        color: white !important; border-radius: 10px;">Search</button>
+                                </div>
+                            </div>
+                          
+                        </div>
                         </div>
                         <div class="content2" id="step6">
-                            
+                            <div class="bg-gradient-to-b px-4 from-gamefiDark-630/30 pt-4 w-full my-4 flex-col xl:flex-row gap-6 text-center text-white active-text" style="background-image:linear-gradient(to right, #21263291, #071720);
+                                    padding-bottom: 41px;" id="claim-content">
+                                    <div class="claim-tab active-text">
+                                    <div class="claim-text mb-3 active-text">
+                                        <h5 class="sf_dec" style="font-size: 22px;
+                                        font-weight: 700">Claim Your AuradX</h5>
+                                    </div>
+                                    <div class="balance-claim mb-3 active-text" style="display: flex;justify-content: center;">
+                                        <div class="available-balance active-text">
+                                            <h5 style="font-size:15px; font-weight: 500;">Available Balnace To Claim</h5>
+                                            <hr class="mt-0 mb-1">
+                                            <div class="balance-value active-text" style="    color: rgb(7, 84, 250);
+                                            font-weight: 600;"><span id="investedETH">0</span></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="mb-3 active-text fdfddff">
+                                        You will be able to collect your AuradX through this form
+                                        once the public sale is over</div>
+
+                                    <div class="claim-btn active-text">
+
+                                        <button onclick="refund()" class="claim-sub-btn">Refund</button>
+                                    </div>
+
+                                </div>
+                                 
+                                </div>
                         </div>
                         <div class="content2" id="step7">
-                            
+                            <div class="bg-gradient-to-b px-4 from-gamefiDark-630/30 pt-4 w-full my-4 flex-col xl:flex-row gap-6 text-center text-white active-text" style="background-image:linear-gradient(to right, #21263291, #071720);
+                                    padding-bottom: 41px;" id="claim-content">
+                                    <div class="claim-tab active-text">
+                                    <div class="claim-text mb-3 active-text">
+                                        <h5 class="sf_dec" style="font-size: 22px;
+                                        font-weight: 700">Claim Your AuradX</h5>
+                                    </div>
+                                    <div class="balance-claim mb-3 active-text" style="display: flex;justify-content: center;">
+                                        <div class="available-balance active-text">
+                                            <h5 style="font-size:15px; font-weight: 500;">Available Balnace To Claim</h5>
+                                            <hr class="mt-0 mb-1">
+                                            <div class="balance-value active-text" style="    color: rgb(7, 84, 250);"><span id="claimableToken">0</span></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="mb-3 active-text fdfddff">
+                                        You will be able to collect your AuradX through this form
+                                        once the public sale is over</div>
+
+                                    <div class="claim-btn active-text">
+
+                                        <button onclick="claim()" class="claim-sub-btn">Claim</button>
+                                    </div>
+
+                                </div>
+                                                                   </div>
                         </div>
                         <!-- end of single item -->
                     </div>
@@ -214,7 +505,12 @@ tabs2.addEventListener("click", function (e) {
 <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
 <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script src="./js/network.js"></script>
 <script src="./js/connect.js"></script>
+<script src="./js/pool/contract.js"></script>
+<script src="./js/pool/load.js"></script>
+<script src="./js/pool/sendTrans.js"></script>
 
 </html>
