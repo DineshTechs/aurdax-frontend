@@ -41,6 +41,7 @@ async function load() {
   //console.log(user.investment)
   //console.log(user.lockedAmount)
   document.getElementById('claimableToken').innerHTML = (Number(user.lockedAmount) / 1000000000000000000).toFixed(2)
+  document.getElementById('claimableToken2').innerHTML = (Number(user.lockedAmount) / 1000000000000000000).toFixed(2)
   document.getElementById('investedETH').innerHTML = (Number(user.investment) / 1000000000000000000).toFixed(2)
 
   let white = await contract3.methods.checkWhiteList(str).call()

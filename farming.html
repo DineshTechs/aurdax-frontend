@@ -69,7 +69,7 @@
                       <!--  Tab Buttons  -->
                       <div class="tabs">
                         <div class="dai_main mt-5">
-                        <button class="tab active" style="border-top-left-radius: 16px;
+                        <button class="tab " style="border-top-left-radius: 16px;
                         border-bottom-left-radius: 16px;">
                             <div class="dai_main_content">
                                 <img src="./assets/img/ax.png" width="30" alt="">
@@ -85,7 +85,7 @@
                                 <p>USDT / ETH</p>
                             </div>
                         </button>
-                        <button class="tab"style="border-top-right-radius: 16px;
+                        <button class="tab" style="border-top-right-radius: 16px;
                         border-bottom-right-radius: 16px;">
                             <div class="dai_main_content bdr">
                                 <img src="./assets/img/dai.png" width="30" alt="">
@@ -165,7 +165,7 @@
                                             <div class="left_apr_lp">
                                                 <span>Total LP Tokens<br> Locked</span>
                                                 <span>:</span>
-                                                <span>00</span>
+                                                <span id="staked1">00</span>
                                             </div>
                                         </div>
 
@@ -174,11 +174,11 @@
                                     <div class="max_box_01">
                                         <div class="box_fs_row">
                                             <span>Deposit</span>
-                                            <span>Balance : 0</span>
+                                            <span id="balance1">Balance : 0</span>
                                         </div>
                                         <div class="max_input">
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control"
+                                                <input id="input1" type="text" class="form-control"
                                                     aria-label="Recipient's username"
                                                     aria-describedby="button-addon2">
                                                 <button class="btn btn-outline-secondary" type="button"
@@ -187,16 +187,16 @@
                                         </div>
                                         <div class="button_eval">
                                             <button>INPUT DallE2-WETH-LP</button>
-                                            <button>FARM</button>
+                                            <button onclick="farm1()">FARM</button>
                                         </div>
                                     </div>
                                     <div class="second_earned">
                                         <div class="left_ear">
                                             <p>DallE2F Earned</p>
-                                            <p>0.00</p>
+                                            <p  id="earned1">0</p>
                                         </div>
                                         <div class="right_ear">
-                                             <button>HARVEST</button>
+                                             <button onclick="harvest1()">HARVEST</button>
                                         </div>
                                     </div>
                                     <div class="third_icon_max_text">
@@ -252,7 +252,7 @@
                                             <div class="left_apr_lp">
                                                 <span>Total LP Tokens<br> Locked</span>
                                                 <span>:</span>
-                                                <span>00</span>
+                                                <span id="staked2">00</span>
                                             </div>
                                         </div>
 
@@ -261,11 +261,11 @@
                                     <div class="max_box_01">
                                         <div class="box_fs_row">
                                             <span>Deposit</span>
-                                            <span>Balance : 0</span>
+                                            <span id="balance2">Balance : 0</span>
                                         </div>
                                         <div class="max_input">
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control"
+                                                <input id="input2" type="text" class="form-control"
                                                     aria-label="Recipient's username"
                                                     aria-describedby="button-addon2">
                                                 <button class="btn btn-outline-secondary" type="button"
@@ -274,16 +274,16 @@
                                         </div>
                                         <div class="button_eval">
                                             <button>INPUT USDT-WETH-LP</button>
-                                            <button>FARM</button>
+                                            <button onclick="farm2()">FARM</button>
                                         </div>
                                     </div>
                                     <div class="second_earned">
                                         <div class="left_ear">
                                             <p>USDT Earned</p>
-                                            <p>0.00</p>
+                                            <p id="earned2">0</p>
                                         </div>
                                         <div class="right_ear">
-                                             <button>HARVEST</button>
+                                             <button onclick="harvest2()">HARVEST</button>
                                         </div>
                                     </div>
                                     <div class="third_icon_max_text">
@@ -339,7 +339,7 @@
                                             <div class="left_apr_lp">
                                                 <span>Total LP Tokens<br> Locked</span>
                                                 <span>:</span>
-                                                <span>00</span>
+                                                <span  id="staked3">00</span>
                                             </div>
                                         </div>
 
@@ -348,11 +348,11 @@
                                     <div class="max_box_01">
                                         <div class="box_fs_row">
                                             <span>Deposit</span>
-                                            <span>Balance : 0</span>
+                                            <span id="balance3">Balance : 0</span>
                                         </div>
                                         <div class="max_input">
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control"
+                                                <input id="input3" type="text" class="form-control"
                                                     aria-label="Recipient's username"
                                                     aria-describedby="button-addon2">
                                                 <button class="btn btn-outline-secondary" type="button"
@@ -360,17 +360,17 @@
                                             </div>
                                         </div>
                                         <div class="button_eval">
-                                            <button>INPUT USDT-WETH-LP</button>
-                                            <button>FARM</button>
+                                            <button>INPUT DAI-WETH-LP</button>
+                                            <button onclick="farm3()">FARM</button>
                                         </div>
                                     </div>
                                     <div class="second_earned">
                                         <div class="left_ear">
                                             <p>DAI Earned</p>
-                                            <p>0.00</p>
+                                            <p id="earned3">0</p>
                                         </div>
                                         <div class="right_ear">
-                                             <button>HARVEST</button>
+                                             <button onclick="harvest3()">HARVEST</button>
                                         </div>
                                     </div>
                                     <div class="third_icon_max_text">
@@ -439,24 +439,15 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 <!-- <script src="./assets/js/index.js"></script> -->
-<script>
-   const tabs = document.querySelectorAll(".tab");
-const tabContent = document.querySelectorAll(".tab-content");
 
-tabs.forEach((tab, i) => {
-  tab.addEventListener("click", function () {
-    tabs.forEach(tab => tab.classList.remove("active"));
-    this.classList.add("active");
-    tabContent.forEach(content => content.classList.add("hidden"));
-    tabContent[i].classList.remove("hidden");
-  });
-});
-</script>
 
 <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
 <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
 <script src="./js/network.js"></script>
 <script src="./js/connect.js"></script>
+<script src="./js/farming/contract.js"></script>
+<script src="./js/farming/load.js"></script>
+<!-- <script src="./js/farming/sendTrans.js"></script> -->
 
 </html>
